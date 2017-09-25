@@ -12,6 +12,7 @@ const {
   GraphQLBoolean,
   GraphQLNonNull, // shows the error message instead of just Null
   GraphQLList, // To return a list of items
+  GraphQLInputObjectType, // To create an obj to send in the mutation
 } = require('graphql');
 
 const videoType = new GraphQLObjectType({
@@ -83,6 +84,7 @@ const queryType = new GraphQLObjectType({
 });
 
 // MutationType is a method to mutate the Obj, in this case to Add new objs
+// For a cleaner way, check verbs/post.js
 const mutationType = new GraphQLObjectType({
   name: 'Mutation',
   description: 'The root Mutation type.',
@@ -109,6 +111,7 @@ const mutationType = new GraphQLObjectType({
     },
   },
 });
+
 const schema = new GraphQLSchema({
   query: queryType,
   mutation: mutationType, // Added mutationType
