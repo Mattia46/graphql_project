@@ -1,3 +1,4 @@
+// Using the MiddleWare
 'use strict';
 
 const { graphql, buildSchema } = require('graphql');
@@ -7,7 +8,7 @@ const schema = buildSchema(`
     type Video {
         id: ID,
         title: String,
-        duration: Int, 
+        duration: Int,
         watched: Boolean
     }
     type Query {

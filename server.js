@@ -1,4 +1,5 @@
-const { schema, resolvers } = require('./index2.js');
+//const { schema, resolvers } = require('./index2.js'); // Needed for index2
+const { schema } = require('./index3.js');
 
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
@@ -11,7 +12,7 @@ const server = express();
 server.use('/graphql', graphqlHTTP({
   schema,
   graphiql: true,
-  rootValue: resolvers,
+  //rootValue: resolvers, // Only needed for index and index2 because say how to fetch the data
 }));
 
 server.listen(PORT, () => {

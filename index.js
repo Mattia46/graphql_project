@@ -1,3 +1,4 @@
+// Basic implementation of GraphQl using build in graphql call
 'use strict';
 
 const { graphql, buildSchema } = require('graphql');
